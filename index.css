@@ -1,0 +1,60 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("newyork.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    
+.rain {
+    height: 100vh;
+    background: url("rain.png");
+    animation: rain 0.3s linear infinite;
+    position: relative; /* Add this line to allow positioning of the pseudo-element */
+}
+.rain:before 
+{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+   
+    animation: lightning 0.5s  infinite;
+    opacity: 0;
+} 
+
+
+@keyframes rain {
+    0% {
+        background-position: 2% 0%;
+    }
+    100% {
+        background-position: 20% 100%;
+       
+    }
+}
+
+@keyframes lightning {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.3;
+    } 
+    40%
+    {
+opacity: 0.5;
+    } 
+    60%
+    {
+        opacity: 0.8;
+    } 
+    80%
+    {
+        opacity:0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
